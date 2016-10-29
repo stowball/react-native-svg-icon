@@ -1,0 +1,46 @@
+{
+  "name": "react-native-svg-icon",
+  "version": "0.0.0",
+  "description": "A simple, but flexible SVG icon component for React Native",
+  "main": "lib/index.js",
+  "watch": {
+    "build": "src/**/*.*"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "watch": "npm-watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Stow <matt@mattstow.com",
+  "homepage": "http://mattstow.com",
+  "license": "MIT",
+  "repository": "https://github.com/stowball/react-native-svg-icon.git",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "svg",
+    "icon",
+    "ui",
+    "es6"
+  ],
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.3.2",
+    "react-native": "^0.36.0",
+    "react-native-svg": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react-native": "^1.9.0",
+    "npm-watch": "^0.1.6"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  }
+}
