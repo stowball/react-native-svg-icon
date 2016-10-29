@@ -38,11 +38,5 @@
     "react": ">=15.0.0",
     "react-native": "0.x",
     "react-native-svg": "4.x"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015"
-    ]
   }
 }
