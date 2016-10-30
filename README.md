@@ -2,6 +2,9 @@
 
 A simple, but flexible SVG icon component for React Native.
 
+[![npm version](https://badge.fury.io/js/react-native-svg-icon.svg)](https://badge.fury.io/js/react-native-svg-icon)
+[![Build Status](https://travis-ci.org/stowball/react-native-svg-icon.svg?branch=master)](https://travis-ci.org/stowball/react-accessible-tabs)
+
 ## Installation
 
 1. Ensure sure you've installed [`react-native-svg`](https://github.com/react-native-community/react-native-svg)
