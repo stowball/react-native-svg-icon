@@ -1,6 +1,6 @@
 # react-native-svg-icon
 
-A simple, but flexible SVG icon component for React Native.
+A simple, but flexible SVG icon component for React Native. [Read the introductory blog post](https://medium.com/@stowball/creating-an-svg-icon-system-in-react-native-fa0964ea5fe4).
 
 [![npm version](https://badge.fury.io/js/react-native-svg-icon.svg)](https://badge.fury.io/js/react-native-svg-icon)
 [![Build Status](https://travis-ci.org/stowball/react-native-svg-icon.svg?branch=master)](https://travis-ci.org/stowball/react-accessible-tabs)
@@ -14,7 +14,7 @@ A simple, but flexible SVG icon component for React Native.
 
 1. Create an object of your SVG icons
 
-    ```jsx
+    ```js
     import React from 'react';
     import { G, Path } from 'react-native-svg';
 
@@ -26,31 +26,30 @@ A simple, but flexible SVG icon component for React Native.
 
 2. Create an `<Icon />` component as a bridge between react-native-svg-icon's `<SvgIcon />` which `import`s the above SVGs
 
-    ```jsx
-        import React from 'react';
-        import SvgIcon from 'react-native-svg-icon';
-        import svgs from './assets/svgs';
+    ```js
+    import React from 'react';
+    import SvgIcon from 'react-native-svg-icon';
+    import svgs from './assets/svgs';
 
-        const Icon = (props) => <SvgIcon {...props} svgs={svgs} />;
+    const Icon = (props) => <SvgIcon {...props} svgs={svgs} />;
 
-        export default Icon;
-
+    export default Icon;
     ```
 
 ## Usage
 
 Use your `<Icon />` in your views.
 
-```jsx
-    import Icon from './components/Icon';
+```js
+import Icon from './components/Icon';
 
-    // Inside some view component
-    render() {
-        return (
-            <Icon name="Tick" />
-            <Icon name="SortArrows" height="20" width="20" />
-        );
-    }
+// Inside some view component
+render() {
+    return (
+        <Icon name="Tick" />
+        <Icon name="SortArrows" height="20" width="20" />
+    );
+}
 ```
 
 ### Props
