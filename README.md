@@ -16,7 +16,7 @@ A simple, but flexible SVG icon component for React Native.
 
     ```jsx
     import React from 'react';
-    import Svg, { G, Path } from 'react-native-svg';
+    import { G, Path } from 'react-native-svg';
 
     export default {
         SortArrows: <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G>,
@@ -46,7 +46,10 @@ Use your `<Icon />` in your views.
 
     // Inside some view component
     render() {
-        return <Icon name="Tick" />;
+        return (
+            <Icon name="Tick" />
+            <Icon name="SortArrows" height="20" width="20" />
+        );
     }
 ```
 
@@ -71,7 +74,7 @@ Use your `<Icon />` in your views.
 }
 ```
 
-These can be overridden in your `<Icon />`'s `defaultProps`;
+These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance basis.
 
 
 ---
