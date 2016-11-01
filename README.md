@@ -76,13 +76,18 @@ render() {
     fill: '#000',
     height: '44',
     width: '44',
-    viewBoxDefault: '0 0 100 100'
+    viewBox: '0 0 100 100'
 }
 ```
 
 These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance basis.
 
-Use `viewBox` on component instances to override what's set via `viewBoxDefault` or `{ Name: { viewBox: '' } }``
+The specificity order for `viewBox` is:
+
+1. `<Icon viewBox />`
+2. `Icon.defaultProps.viewBox`
+3. `{ Name: { viewBox: '' } }`
+4. `SvgIcon.defaultProps.viewBox`
 
 ---
 
