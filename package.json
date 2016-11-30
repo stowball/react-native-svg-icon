@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-icon",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A simple, but flexible SVG icon component for React Native",
   "main": "lib/index.js",
   "watch": {
