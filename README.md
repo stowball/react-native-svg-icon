@@ -54,20 +54,13 @@ import Icon from './components/Icon';
 render() {
     return (
         <Icon name="SortArrows" height="20" width="20" />
-        <Icon name="Tick" viewBox="0 0 200 200" />
+        <Icon name="Tick" fill="#0f0" viewBox="0 0 200 200" />
+        <Icon name="Star" fill="transparent" stroke="#fff" strokeWidth="5" />
     );
 }
 ```
 
 ### Props
-
-#### Required
-
-```js
-{
-    name: <string>
-}
-```
 
 #### Default
 
@@ -81,6 +74,20 @@ render() {
 ```
 
 These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance basis.
+
+#### Types
+
+```js
+{
+    fill: string.isRequired,
+    height: oneOfType([string, number]).isRequired,
+    name: string.isRequired,
+    stroke: string,
+    strokeWidth: oneOfType([string, number]),
+    width: oneOfType([string, number]).isRequired,
+    viewBox: string
+}
+```
 
 The specificity order for `viewBox` is:
 

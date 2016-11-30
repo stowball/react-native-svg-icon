@@ -8,8 +8,13 @@ const SvgIcon = (props) => {
         return null;
     }
 
+    const height = props.height && props.height.toString();
+    const width = props.width && props.width.toString();
+    const strokeWidth = props.strokeWidth && props.strokeWidth.toString();
+
     const isSimple = React.isValidElement(props.svgs[props.name]);
     const svgEl = isSimple ? props.svgs[props.name] : props.svgs[props.name].svg;
+
     let viewBox = defaultViewBox;
 
     if (props.viewBox) {
@@ -20,8 +25,12 @@ const SvgIcon = (props) => {
     }
 
     return (
-        <Svg height={props.height} width={props.width} viewBox={viewBox}>
-            {React.cloneElement(svgEl, { fill: props.fill })}
+        <Svg height={height} width={width} viewBox={viewBox}>
+            {React.cloneElement(svgEl, {
+                fill: props.fill,
+                stroke: props.stroke,
+                strokeWidth: strokeWidth
+            })}
         </Svg>
     );
 };
@@ -34,10 +43,12 @@ SvgIcon.defaultProps = {
 
 SvgIcon.propTypes = {
     fill: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
+    height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     name: PropTypes.string.isRequired,
+    stroke: PropTypes.string,
+    strokeWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     svgs: PropTypes.object.isRequired,
-    width: PropTypes.string.isRequired,
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     viewBox: PropTypes.string
 };
 
