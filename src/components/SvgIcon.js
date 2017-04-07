@@ -25,12 +25,16 @@ const SvgIcon = (props) => {
     }
 
     return (
-        <Svg height={height} width={width} viewBox={viewBox}>
-            {React.cloneElement(svgEl, {
-                fill: props.fill,
-                stroke: props.stroke,
-                strokeWidth: strokeWidth
-            })}
+        <Svg height={height} testID="svg-icon" width={width} viewBox={viewBox}>
+            {React.cloneElement(
+                svgEl,
+                {
+                    fill: props.fill,
+                    stroke: props.stroke,
+                    strokeWidth: strokeWidth,
+                    testID: 'svg-icon__cloned-element'
+                }
+            )}
         </Svg>
     );
 };
