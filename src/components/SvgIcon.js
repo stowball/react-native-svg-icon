@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import Svg from 'react-native-svg';
 
-const defaultViewBox = '0 0 100 100';
-
 const SvgIcon = (props) => {
     if (!props.svgs[props.name]) {
         return null;
@@ -15,13 +13,25 @@ const SvgIcon = (props) => {
     const isSimple = React.isValidElement(props.svgs[props.name]);
     const svgEl = isSimple ? props.svgs[props.name] : props.svgs[props.name].svg;
 
-    let viewBox = defaultViewBox;
+    /**
+     * ViewBox inheritance order:
+     *
+     * 1. <Icon viewBox />
+     * 2. { Name: { viewBox: '' } }
+     * 3. Icon.defaultProps.viewBox
+     * 4. SvgIcon.defaultProps.viewBox
+     */
 
-    if (props.viewBox) {
+    let viewBox;
+
+    if (props.viewBox && props.viewBox !== SvgIcon.defaultProps.viewBox) {
         viewBox = props.viewBox;
     }
     else if (!isSimple && props.svgs[props.name].viewBox) {
         viewBox = props.svgs[props.name].viewBox;
+    }
+    else {
+        viewBox = SvgIcon.defaultProps.viewBox;
     }
 
     return (
@@ -42,7 +52,8 @@ const SvgIcon = (props) => {
 SvgIcon.defaultProps = {
     fill: '#000',
     height: '44',
-    width: '44'
+    width: '44',
+    viewBox: '0 0 100 100'
 };
 
 SvgIcon.propTypes = {

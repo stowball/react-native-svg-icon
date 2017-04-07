@@ -54,4 +54,16 @@ describe('<SvgIcon />', () => {
 
         expect(wrapper.find({ testID: 'svg-icon' }).prop('viewBox')).toEqual(fixtures.complexSvg.viewBox);
     });
+    it('should give priority to the svg config viewBox over the defaultProps viewBox', () => {
+        SvgIcon.defaultProps.viewBox = '0 0 0 1';
+
+        const wrapper = shallow(<SvgIcon {...fixtures.validSvgIcon} svgs={{ test: fixtures.complexSvg }} />);
+
+        expect(wrapper.find({ testID: 'svg-icon' }).prop('viewBox')).toEqual(fixtures.complexSvg.viewBox);
+    });
+    it('should give priority to the viewBox prop over the svg config viewBox', () => {
+        const wrapper = shallow(<SvgIcon {...fixtures.validSvgIcon} svgs={{ test: fixtures.complexSvg }} viewBox="4 3 2 1" />);
+
+        expect(wrapper.find({ testID: 'svg-icon' }).prop('viewBox')).toEqual('4 3 2 1');
+    });
 });
