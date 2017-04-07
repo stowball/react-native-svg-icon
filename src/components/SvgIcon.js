@@ -17,8 +17,8 @@ const SvgIcon = (props) => {
      * ViewBox inheritance order:
      *
      * 1. <Icon viewBox />
-     * 2. { Name: { viewBox: '' } }
-     * 3. Icon.defaultProps.viewBox
+     * 2. Icon.defaultProps.viewBox
+     * 3. { Name: { viewBox: '' } }
      * 4. SvgIcon.defaultProps.viewBox
      */
 
