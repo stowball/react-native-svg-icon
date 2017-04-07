@@ -4,7 +4,7 @@ import Svg from 'react-native-svg';
 const defaultViewBox = '0 0 100 100';
 
 const SvgIcon = (props) => {
-    if (!props.name || !props.svgs[props.name]) {
+    if (!props.svgs[props.name]) {
         return null;
     }
 
