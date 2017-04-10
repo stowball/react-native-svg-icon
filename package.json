@@ -9,7 +9,8 @@
   "scripts": {
     "build": "babel src -d lib",
     "watch": "npm-watch",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "lint": "eslint .",
+    "test": "jest src"
   },
   "author": "Matt Stow <matt@mattstow.com>",
   "homepage": "http://mattstow.com",
@@ -24,20 +25,39 @@
     "ui",
     "es6"
   ],
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "__tests__"
+    ],
+    "testRegex": "/__tests__/(.*).spec.jsx?$",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!react-native-svg)"
+    ]
+  },
   "dependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "enzyme": "^2.8.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-react": "^6.10.3",
+    "jest": "^19.0.2",
     "npm-watch": "^0.1.6",
-    "react": "^15.4.0",
-    "react-native": "^0.38.0",
+    "react": "~15.4.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "~15.4.0",
+    "react-native": "^0.41.2",
     "react-native-svg": "^4.4.0"
   },
   "peerDependencies": {
-    "react-native": ">=0.38",
+    "react-native": ">=0.41",
     "react-native-svg": "4.x"
   }
 }

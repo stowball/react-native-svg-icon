@@ -7,13 +7,15 @@
         "sourceType": "module"
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jest/globals": true
     },
     "globals": {
         "module": true,
     },
     "plugins": [
-      "react"
+      "react",
+      "jest"
     ],
     "extends": ["plugin:react/recommended"],
     "rules": {
@@ -121,6 +123,8 @@
         "space-infix-ops": 2,
         "wrap-regex": 2,
 
-        "react/jsx-uses-vars": 2
+        "react/jsx-uses-vars": 2,
+
+        "jest/no-focused-tests": 2
     }
 }
