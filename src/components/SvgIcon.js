@@ -25,7 +25,7 @@ const SvgIcon = (props) => {
     }
 
     return (
-        <Svg height={height} width={width} viewBox={viewBox}>
+        <Svg height={height} width={width} viewBox={viewBox} style={props.style}>
             {React.cloneElement(svgEl, {
                 fill: props.fill,
                 stroke: props.stroke,
@@ -47,6 +47,7 @@ SvgIcon.propTypes = {
     name: PropTypes.string.isRequired,
     stroke: PropTypes.string,
     strokeWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    style: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     svgs: PropTypes.object.isRequired,
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     viewBox: PropTypes.string
