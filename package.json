@@ -32,11 +32,13 @@
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "npm-watch": "^0.1.6",
+    "prop-types": "^15.5.10",
     "react": "^15.4.0",
     "react-native": "^0.38.0",
     "react-native-svg": "^4.4.0"
   },
   "peerDependencies": {
+    "prop-types": "^15.5.10",
     "react-native": ">=0.38",
     "react-native-svg": "4.x"
   }
