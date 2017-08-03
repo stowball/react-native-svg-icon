@@ -1,10 +1,15 @@
 import React, { PropTypes } from 'react';
+import { Platform } from 'react-native';
 import Svg from 'react-native-svg';
 
-const defaultViewBox = '0 0 100 100';
-
 const SvgIcon = (props) => {
-    if (!props.name || !props.svgs[props.name]) {
+    if (!props.name) {
+        return null;
+    }
+
+    const name = props.svgs[`${props.name}.${Platform.OS}`] || props.svgs[props.name];
+
+    if (!name) {
         return null;
     }
 
@@ -12,16 +17,22 @@ const SvgIcon = (props) => {
     const width = props.width && props.width.toString();
     const strokeWidth = props.strokeWidth && props.strokeWidth.toString();
 
-    const isSimple = React.isValidElement(props.svgs[props.name]);
-    const svgEl = isSimple ? props.svgs[props.name] : props.svgs[props.name].svg;
+    const isSimple = React.isValidElement(name);
+    const svgEl = isSimple ? name : name.svg;
 
-    let viewBox = defaultViewBox;
+    let viewBox;
 
-    if (props.viewBox) {
+    if (props.viewBox && props.viewBox !== SvgIcon.defaultProps.viewBox) {
         viewBox = props.viewBox;
     }
-    else if (!isSimple && props.svgs[props.name].viewBox) {
-        viewBox = props.svgs[props.name].viewBox;
+    else if (!isSimple && name.viewBox) {
+        viewBox = name.viewBox;
+    }
+    else if (props.defaultViewBox) {
+        viewBox = props.defaultViewBox;
+    }
+    else {
+        viewBox = SvgIcon.defaultProps.viewBox;
     }
 
     return (
@@ -38,7 +49,8 @@ const SvgIcon = (props) => {
 SvgIcon.defaultProps = {
     fill: '#000',
     height: '44',
-    width: '44'
+    width: '44',
+    viewBox: '0 0 100 100'
 };
 
 SvgIcon.propTypes = {

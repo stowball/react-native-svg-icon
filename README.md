@@ -31,6 +31,8 @@ A simple, but flexible SVG icon component for React Native. [Read the introducto
     }
     ```
 
+    To conform to React/JSX standards, we need to convert SVG elements to begin with a capital letter, and convert hyphenated attributes to camelCase. For example. `<path>` becomes `<Path>` and `stop-color` becomes `stopColor`.
+
 2. Create an `<Icon />` component as a bridge between react-native-svg-icon's `<SvgIcon />` which `import`s the above SVGs
 
     ```js
@@ -60,6 +62,8 @@ render() {
 }
 ```
 
+**Pro Tip**: An SVG name suffixed with `'.ios'` or `'.android'` will automatically be rendered on the appropriate platform when passing the base name as the `name` prop.
+
 ### Props
 
 #### Default
@@ -79,6 +83,7 @@ These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance
 
 ```js
 {
+    defaultViewBox: string
     fill: string.isRequired,
     height: oneOfType([number, string]).isRequired,
     name: string.isRequired,
@@ -94,12 +99,11 @@ These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance
 The specificity order for `viewBox` is:
 
 1. `<Icon viewBox />`
-2. `Icon.defaultProps.viewBox`
-3. `{ Name: { viewBox: '' } }`
+2. `{ Name: { viewBox: '' } }`
+3. `Icon.defaultProps.defaultViewBox`
 4. `SvgIcon.defaultProps.viewBox`
 
 ---
 
-Copyright (c) 2016 [Matt Stow](http://mattstow.com)  
 Copyright (c) 2017 [Matt Stow](http://mattstow.com)  
 Licensed under the MIT license *(see [LICENSE](https://github.com/stowball/react-native-svg-icon/blob/master/LICENSE) for details)*
