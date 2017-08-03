@@ -32,12 +32,14 @@
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
     "npm-watch": "^0.1.6",
-    "react": "15.4.0",
-    "react-native": "0.43.0",
-    "react-native-svg": "4.5.0"
+    "prop-types": "^15.5.10",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.46.0",
+    "react-native-svg": "5.3.0"
   },
   "peerDependencies": {
-    "react-native": ">=0.40 < 0.44",
-    "react-native-svg": "4.5.x"
+    "prop-types": "^15.5.10",
+    "react-native": ">=0.46",
+    "react-native-svg": ">=5.3"
   }
 }

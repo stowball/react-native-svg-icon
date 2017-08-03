@@ -12,6 +12,7 @@ A simple, but flexible SVG icon component for React Native. [Read the introducto
 
 ### NOTICE
 
+* 0.7.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) >= 5.3.0
 * 0.6.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.5.0
 * 0.5.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.4.x
 
