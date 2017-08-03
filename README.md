@@ -3,12 +3,17 @@
 A simple, but flexible SVG icon component for React Native. [Read the introductory blog post](https://medium.com/@stowball/creating-an-svg-icon-system-in-react-native-fa0964ea5fe4).
 
 [![npm version](https://badge.fury.io/js/react-native-svg-icon.svg)](https://badge.fury.io/js/react-native-svg-icon)
-[![Build Status](https://travis-ci.org/stowball/react-native-svg-icon.svg?branch=master)](https://travis-ci.org/stowball/react-accessible-tabs)
+[![Build Status](https://travis-ci.org/stowball/react-native-svg-icon.svg?branch=master)](https://travis-ci.org/stowball/react-native-svg-icon)
 
 ## Installation
 
 1. Ensure sure you've installed [`react-native-svg`](https://github.com/react-native-community/react-native-svg)
 2. `npm i react-native-svg-icon --save`
+
+### NOTICE
+
+* 0.6.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.5.0
+* 0.5.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.4.x
 
 ## Setup
 
