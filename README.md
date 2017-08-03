@@ -80,11 +80,13 @@ These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance
 ```js
 {
     fill: string.isRequired,
-    height: oneOfType([string, number]).isRequired,
+    height: oneOfType([number, string]).isRequired,
     name: string.isRequired,
     stroke: string,
-    strokeWidth: oneOfType([string, number]),
-    width: oneOfType([string, number]).isRequired,
+    strokeWidth: oneOfType([number, string]),
+    style: oneOfType([array, object]),
+    svgs: object.isRequired,
+    width: oneOfType([number, string]).isRequired,
     viewBox: string
 }
 ```
@@ -99,4 +101,5 @@ The specificity order for `viewBox` is:
 ---
 
 Copyright (c) 2016 [Matt Stow](http://mattstow.com)  
+Copyright (c) 2017 [Matt Stow](http://mattstow.com)  
 Licensed under the MIT license *(see [LICENSE](https://github.com/stowball/react-native-svg-icon/blob/master/LICENSE) for details)*
