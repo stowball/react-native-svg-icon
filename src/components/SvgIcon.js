@@ -40,6 +40,7 @@ const SvgIcon = (props) => {
         <Svg height={height} width={width} viewBox={viewBox} style={props.style}>
             {React.cloneElement(svgEl, {
                 fill: props.fill,
+                fillRule: props.fillRule,
                 stroke: props.stroke,
                 strokeWidth: strokeWidth
             })}
@@ -49,6 +50,7 @@ const SvgIcon = (props) => {
 
 SvgIcon.defaultProps = {
     fill: '#000',
+    fillRule: 'evenodd',
     height: '44',
     width: '44',
     viewBox: '0 0 100 100'
@@ -56,6 +58,7 @@ SvgIcon.defaultProps = {
 
 SvgIcon.propTypes = {
     fill: PropTypes.string.isRequired,
+    fillRule: PropTypes.string,
     height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
     stroke: PropTypes.string,

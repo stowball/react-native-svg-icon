@@ -12,6 +12,7 @@ A simple, but flexible SVG icon component for React Native. [Read the introducto
 
 ### NOTICE
 
+* 0.8.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) >= 5.3.0
 * 0.7.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) >= 5.3.0
 * 0.6.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.5.0
 * 0.5.0 - only supports [react-native-svg](https://github.com/react-native-community/react-native-svg) 4.4.x
@@ -32,8 +33,8 @@ A simple, but flexible SVG icon component for React Native. [Read the introducto
         SortArrows: <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G>,
         Tick: {
             svg: <Path d="M38.729 75.688a4.48 4.48 0 0 1-3.21-1.356L16.558 55.004c-1.774-1.807-1.774-4.736-.001-6.543a4.48 4.48 0 0 1 6.42 0l15.753 16.056 37.749-38.474a4.478 4.478 0 0 1 6.419 0c1.773 1.806 1.773 4.736 0 6.543L41.939 74.332a4.48 4.48 0 0 1-3.21 1.356z"/>,
-            viewBox: '0 0 50 50'
-        }
+            viewBox: '0 0 50 50',
+        },
     }
     ```
 
@@ -61,9 +62,11 @@ import Icon from './components/Icon';
 // Inside some view component
 render() {
     return (
-        <Icon name="SortArrows" height="20" width="20" />
-        <Icon name="Tick" fill="#0f0" viewBox="0 0 200 200" />
-        <Icon name="Star" fill="transparent" stroke="#fff" strokeWidth="5" />
+        <Fragment>
+          <Icon name="SortArrows" height="20" width="20" />
+          <Icon name="Tick" fill="#0f0" viewBox="0 0 200 200" />
+          <Icon name="Star" fill="transparent" stroke="#fff" strokeWidth="5" />
+        </Fragment>
     );
 }
 ```
@@ -77,9 +80,10 @@ render() {
 ```js
 {
     fill: '#000',
+    fillRule: 'evenodd',
     height: '44',
     width: '44',
-    viewBox: '0 0 100 100'
+    viewBox: '0 0 100 100',
 }
 ```
 
@@ -89,8 +93,9 @@ These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance
 
 ```js
 {
-    defaultViewBox: string
+    defaultViewBox: string,
     fill: string.isRequired,
+    fillRule: string,
     height: oneOfType([number, string]).isRequired,
     name: string.isRequired,
     stroke: string,
@@ -98,7 +103,7 @@ These can be overridden in your `<Icon />`'s `defaultProps` or an a per instance
     style: oneOfType([array, object]),
     svgs: object.isRequired,
     width: oneOfType([number, string]).isRequired,
-    viewBox: string
+    viewBox: string,
 }
 ```
 
@@ -111,5 +116,5 @@ The specificity order for `viewBox` is:
 
 ---
 
-Copyright (c) 2017 [Matt Stow](http://mattstow.com)  
+Copyright (c) 2018 [Matt Stow](http://mattstow.com)  
 Licensed under the MIT license *(see [LICENSE](https://github.com/stowball/react-native-svg-icon/blob/master/LICENSE) for details)*
