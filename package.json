@@ -9,7 +9,7 @@
   "scripts": {
     "watch": "npm-watch",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "prepublish": "node_modules/babel-cli/bin/babel.js src -d lib"
+    "prepare": "node_modules/babel-cli/bin/babel.js src -d lib"
   },
   "author": "Matt Stow <matt@mattstow.com>",
   "homepage": "http://mattstow.com",
