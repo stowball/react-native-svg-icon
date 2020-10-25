@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform, ViewPropTypes } from 'react-native';
+import { Platform } from 'react-native';
 import Svg from 'react-native-svg';
 
 const SvgIcon = (props) => {
@@ -63,7 +63,7 @@ SvgIcon.propTypes = {
     name: PropTypes.string.isRequired,
     stroke: PropTypes.string,
     strokeWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    style: PropTypes.oneOfType([ViewPropTypes.style, PropTypes.array, PropTypes.object]),
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     svgs: PropTypes.object.isRequired,
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     viewBox: PropTypes.string
