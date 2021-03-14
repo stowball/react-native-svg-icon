@@ -63,7 +63,7 @@ SvgIcon.propTypes = {
     name: PropTypes.string.isRequired,
     stroke: PropTypes.string,
     strokeWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
     svgs: PropTypes.object.isRequired,
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     viewBox: PropTypes.string
